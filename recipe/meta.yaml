@@ -1,7 +1,6 @@
 {% set name = "apache-airflow-providers-openfaas" %}
 {% set version = "2.0.2" %}
 
-
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -11,9 +10,9 @@ source:
   sha256: 1ae18b8d3f7ae55834f66dea1bb16ae28c9230e3f0296d0cf6a45d7285d4fde3
 
 build:
-  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
@@ -23,6 +22,8 @@ requirements:
   run:
     - python >=3.7
     - apache-airflow >=2.1.0
+    - gitpython
+    - wheel
 
 test:
   imports:
@@ -35,9 +36,10 @@ test:
 
 about:
   home: https://airflow.apache.org/
-  summary: Provider for OpenFaaS for Apache Airflow
+  summary: Provider for Apache Airflow. Implements apache-airflow-providers-openfaas package
   license: Apache-2.0
   license_file: LICENSE
+  license_family: Apache
   doc_url: https://airflow.apache.org/docs/apache-airflow-providers-openfaas/stable/index.html
   dev_url: https://github.com/apache/airflow/
 
