@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-openfaas" %}
-{% set version = "3.1.0" %}
+{% set version = "3.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-airflow-providers-openfaas-{{ version }}.tar.gz
-  sha256: 822062fca6f0f323e6925e74e10bce0b446937795f64a3a1a534f6a3585dd44e
+  sha256: 5dbc29c997e7d88a08264ab756da413a4ba38bd42f50a33c62606e38230d6018
 
 build:
   noarch: python
