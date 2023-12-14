@@ -1,13 +1,13 @@
 {% set name = "apache-airflow-providers-openfaas" %}
-{% set version = "3.3.0" %}
+{% set version = "3.4.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-airflow-providers-openfaas-{{ version }}.tar.gz
-  sha256: fb45ee379c6577ba23b162bcf2a7709cf8f4db1410a11758db714bd47830ff9f
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 2de3c5b98bbc6c65a42bfa8c56f4a78bd5f8bf577eb8f1c3218dacb559684502
 
 build:
   noarch: python
@@ -16,29 +16,26 @@ build:
 
 requirements:
   host:
-    - python >=3.8
-    - setuptools >=67.2.0,<68.0.0
+    - python >=3.8,<4.dev0
+    - flit-core >=3.2,<4
     - pip
   run:
     - python >=3.8
-    - apache-airflow >=2.5.0
+    - apache-airflow >=2.6.0
 
 test:
   imports:
     - airflow.providers.openfaas
-    - airflow.providers.openfaas.hooks
   commands:
     - pip check
   requires:
     - pip
 
 about:
-  home: https://airflow.apache.org/
-  summary: Provider for Apache Airflow. Implements apache-airflow-providers-openfaas package
+  home: https://github.com/apache/airflow/
+  summary: Provider package apache-airflow-providers-openfaas for Apache Airflow
   license: Apache-2.0
-  license_file:
-    - LICENSE
-    - NOTICE
+  license_file: airflow/providers/openfaas/LICENSE
   license_family: Apache
   doc_url: https://airflow.apache.org/docs/apache-airflow-providers-openfaas/stable/index.html
   dev_url: https://github.com/apache/airflow/
