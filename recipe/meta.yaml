@@ -1,5 +1,6 @@
 {% set name = "apache-airflow-providers-openfaas" %}
-{% set version = "3.8.0" %}
+{% set version = "3.8.1" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_openfaas-{{ version }}.tar.gz
-  sha256: a85d84ed8350488385705386758c0f06c141d07a0ea9d4418a01df6a0080f00e
+  sha256: aa87454caa5fbf43b2f0cb1855a88672360f8f7eb8149dd9d3781e2a6c9263de
 
 build:
   noarch: python
