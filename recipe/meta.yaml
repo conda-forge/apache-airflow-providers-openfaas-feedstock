@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-openfaas" %}
-{% set version = "3.8.2" %}
+{% set version = "3.8.3" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_openfaas-{{ version }}.tar.gz
-  sha256: d4a759e4434f2acd18bb73cf48777f797d77438139b3d02b64275e46ac4c040e
+  sha256: 998ab537217ac85984637b328a2579586d2fd86d197f22a5679af45016061033
 
 build:
   noarch: python
@@ -21,6 +21,7 @@ requirements:
     - flit-core ==3.12.0
     - pip
   run:
+    - apache-airflow-providers-common-compat >=1.8.0
     - python >={{ python_min }}
     - apache-airflow >=2.10.0
 
