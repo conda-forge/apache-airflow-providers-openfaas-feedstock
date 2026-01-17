@@ -28,7 +28,7 @@ requirements:
 tests:
   - python:
       imports:
-        - airflow.providers.openfaas
+      - airflow.providers.openfaas
       pip_check: true
       python_version: ${{ python_min }}.*
 
