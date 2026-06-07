@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-openfaas
-  version: "3.9.4"
+  version: "3.9.5"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_openfaas-${{ version }}.tar.gz
-  sha256: 3c8c67def94ab36c121d53037356383b075bfae35ccca792b71b91e636a49185
+  sha256: 70cb31d847b8cf65f4e737d04670ab2f74354b0f243b0d6f1486299a6dbce61b
 
 build:
   noarch: python
